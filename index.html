@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareTrip Busan Support</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5fafe;
+    --surface: #ffffff;
+    --surface-alt: #eaf6ff;
+    --border: #d3e7f5;
+    --text: #0b3552;
+    --text-muted: #5a7c93;
+    --accent: #0ea5e9;
+    --accent-deep: #0369a1;
+    --accent-soft: #bae6fd;
+    --shadow: 0 1px 2px rgba(11, 53, 82, 0.04), 0 8px 24px rgba(11, 53, 82, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #071827;
+      --surface: #0e2536;
+      --surface-alt: #123044;
+      --border: #1b3b52;
+      --text: #e3f3fe;
+      --text-muted: #8fb6cc;
+      --accent: #38bdf8;
+      --accent-deep: #7dd3fc;
+      --accent-soft: #123044;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #071827;
+    --surface: #0e2536;
+    --surface-alt: #123044;
+    --border: #1b3b52;
+    --text: #e3f3fe;
+    --text-muted: #8fb6cc;
+    --accent: #38bdf8;
+    --accent-deep: #7dd3fc;
+    --accent-soft: #123044;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 72px 24px 64px;
+  }
+
+  .mark {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: "Manrope", ui-sans-serif, sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+
+  .tagline {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0 0 40px;
+    max-width: 46ch;
+  }
+
+  h2 {
+    font-family: "Manrope", ui-sans-serif, sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin: 0 0 16px;
+  }
+
+  section {
+    margin-top: 48px;
+  }
+
+  section > p {
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .lang-chip {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .mail-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    background: var(--accent);
+    color: #05283b;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    transition: filter 0.15s ease;
+  }
+
+  .mail-button:hover { filter: brightness(1.06); }
+  .mail-button:focus-visible {
+    outline: 2px solid var(--accent-deep);
+    outline-offset: 2px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-item:last-child { padding-bottom: 0; }
+
+  .faq-item h3 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 6px;
+  }
+
+  .faq-item p {
+    margin: 0;
+    color: var(--text-muted);
+    max-width: 62ch;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  a { color: var(--accent-deep); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mail-button { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" width="68" height="68" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="96" height="96" fill="#E0F2FE"/>
+    <path opacity="0.6" d="M0 69.5946C7.99937 64.795 15.9987 64.795 23.9981 69.5946C31.9975 74.3942 39.9969 74.3942 47.9963 69.5946C55.9956 64.795 63.995 64.795 71.9944 69.5946C79.9938 74.3942 87.9931 74.3942 95.9925 69.5946V95.9925H0V69.5946Z" fill="#BAE6FD"/>
+    <path opacity="0.35" d="M0 77.9939C7.99937 73.1943 15.9987 73.1943 23.9981 77.9939C31.9975 82.7936 39.9969 82.7936 47.9963 77.9939C55.9956 73.1943 63.995 73.1943 71.9944 77.9939C79.9938 82.7936 87.9931 82.7936 95.9925 77.9939V95.9925H0V77.9939Z" fill="#BAE6FD"/>
+    <path d="M64.795 23.9981C74.3942 19.1985 83.9935 28.7978 79.1938 38.397C74.3942 47.9963 62.3951 47.9963 62.3951 47.9963C62.3951 47.9963 62.3951 35.9972 64.795 23.9981Z" fill="#BAE6FD" stroke="#7DD3FC" stroke-width="1.19991"/>
+    <path d="M79.1938 38.397C69.5946 40.7968 62.3951 47.9962 62.3951 47.9962" fill="none" stroke="#7DD3FC" stroke-width="1.19991" stroke-linecap="round"/>
+    <path d="M56.3956 40.7968H29.9977C28.0096 40.7968 26.3979 42.4085 26.3979 44.3965V46.7963C26.3979 48.7844 28.0096 50.3961 29.9977 50.3961H56.3956C58.3837 50.3961 59.9953 48.7844 59.9953 46.7963V44.3965C59.9953 42.4085 58.3837 40.7968 56.3956 40.7968Z" fill="#0EA5E9"/>
+    <path d="M46.7963 26.3979H44.3965C42.4085 26.3979 40.7968 28.0096 40.7968 29.9977V56.3956C40.7968 58.3837 42.4085 59.9953 44.3965 59.9953H46.7963C48.7844 59.9953 50.3961 58.3837 50.3961 56.3956V29.9977C50.3961 28.0096 48.7844 26.3979 46.7963 26.3979Z" fill="#0EA5E9"/>
+    <path opacity="0.4" d="M48.5962 40.7968H42.5967C41.6026 40.7968 40.7968 41.6026 40.7968 42.5967V48.5962C40.7968 49.5902 41.6026 50.3961 42.5967 50.3961H48.5962C49.5902 50.3961 50.3961 49.5902 50.3961 48.5962V42.5967C50.3961 41.6026 49.5902 40.7968 48.5962 40.7968Z" fill="#38BDF8"/>
+    <path d="M64.7949 51.5959C60.1513 51.5959 56.3956 55.3517 56.3956 59.9953C56.3956 65.3949 64.7949 75.5941 64.7949 75.5941C64.7949 75.5941 73.1943 65.3949 73.1943 59.9953C73.1943 55.3517 69.4385 51.5959 64.7949 51.5959Z" fill="#0369A1"/>
+    <path opacity="0.85" d="M64.7949 63.595C66.783 63.595 68.3946 61.9834 68.3946 59.9953C68.3946 58.0072 66.783 56.3956 64.7949 56.3956C62.8068 56.3956 61.1952 58.0072 61.1952 59.9953C61.1952 61.9834 62.8068 63.595 64.7949 63.595Z" fill="#E0F2FE"/>
+  </svg>
+
+  <h1>CareTrip Busan</h1>
+  <p class="tagline">A hospital finder and wellness guide for travelers in Korea — no Korean required.</p>
+
+  <section>
+    <h2>About</h2>
+    <p>CareTrip Busan matches your symptoms to the right hospital department, maps nearby clinics with directions and Korean-address cards for taxis, and rounds out your trip with wellness spots around Busan. Hospital and wellness listings are drawn from the Korea Tourism Organization's public OpenAPI and Korea's national health insurance hospital directory.</p>
+    <div class="langs">
+      <span class="lang-chip">한국어</span>
+      <span class="lang-chip">EN</span>
+      <span class="lang-chip">中文</span>
+      <span class="lang-chip">日本語</span>
+      <span class="lang-chip">DE</span>
+      <span class="lang-chip">FR</span>
+      <span class="lang-chip">ES</span>
+      <span class="lang-chip">RU</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-card">
+      <p>Questions, bug reports, or feature requests — reach the team directly. We usually reply within a few business days.</p>
+      <a class="mail-button" href="mailto:83jason15@gmail.com">83jason15@gmail.com</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Frequently asked</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Do I need to create an account?</h3>
+        <p>No. Every feature — symptom search, hospital map, wellness recommendations — works without signing in.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why does the app ask for my location?</h3>
+        <p>Location is used only to find hospitals and wellness spots within your chosen radius (0.5–5 km) and to calculate distance and directions. It's never collected or shared beyond that.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which languages are supported?</h3>
+        <p>Korean, English, Chinese, Japanese, German, French, Spanish, and Russian. The app switches instantly from the language menu — no restart needed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where does the hospital data come from?</h3>
+        <p>The Korea Tourism Organization's medical tourism OpenAPI, supplemented by Korea's Health Insurance Review &amp; Assessment Service hospital directory for broader local coverage.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Found a bug or have an idea?</h3>
+        <p>Email us at the address above with your device, iOS version, and what you were doing when it happened — that's usually enough to track down the issue.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 CareTrip Busan</span>
+    <span>Built with Korea Tourism Organization OpenAPI</span>
+  </footer>
+</main>
+</body>
+</html>
